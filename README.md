@@ -3,7 +3,7 @@
 This plugin allows you to set custom join and quit messages with a few cool features.
 
 ## Commands
-/almightyreload - almighty.reload - Reloads the configuration file
+- /almightyreload - almighty.reload - Reloads the configuration file
 
 
 ## Permissions
