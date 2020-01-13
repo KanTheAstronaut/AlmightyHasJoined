@@ -1,0 +1,2 @@
+# AlmightyHasJoined
+Spigot plugin
