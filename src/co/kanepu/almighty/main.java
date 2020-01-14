@@ -14,13 +14,15 @@ import org.bukkit.command.CommandSender;
 public class main extends JavaPlugin implements Listener{
 
 	FileConfiguration config = this.getConfig();
+	File conf;
 	@Override
 	public void onEnable() {
-        config.addDefault("joinmsg", "&6THE ALMIGHTY %player% JOINED!");
-        config.addDefault("quitmsg", "&6THE ALMIGHTY %player% LEFT!");
-        config.addDefault("onlyonjoin", true);
-        config.options().copyDefaults(true);
-        saveConfig();
+        	config.addDefault("joinmsg", "'&6THE ALMIGHTY %player% JOINED!'");
+        	config.addDefault("quitmsg", "'&6THE ALMIGHTY %player% LEFT!'");
+        	config.addDefault("onlyonjoin", true);
+        	config.options().copyDefaults(true);
+        	saveConfig();
+		conf = new File(getDataFolder(), "config.yml");
 		getServer().getPluginManager().registerEvents(this, this);
 	}
 	
@@ -63,7 +65,9 @@ public class main extends JavaPlugin implements Listener{
 	public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
 		if (cmd.getName().equalsIgnoreCase("almightyreload") && sender.hasPermission("almighty.reload")) {
 			sender.sendMessage(ChatColor.GREEN + "The configuration file has been reloaded!");
-			saveConfig();
+			config = YamlConfiguration.loadConfiguration(conf);
+			ConsoleCommandSender console = getServer().getConsoleSender();
+			console.sendMessage(ChatColor.GOLD + "[AlmightyHasJoined] " + ChatColor.GREEN + "The configuration file has been reloaded!");
 		}
 		return false;
 	}
