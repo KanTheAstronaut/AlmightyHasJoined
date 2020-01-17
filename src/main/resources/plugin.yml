@@ -1,0 +1,7 @@
+name: AlmightyHasJoined
+main: co.kanepu.almightyhasjoined.main
+author: KanTheAstronaut
+version: 2.0
+commands:
+  almightyreload:
+    description: Reloads the configuration file

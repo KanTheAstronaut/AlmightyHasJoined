@@ -1,0 +1,7 @@
+joinmsg: '&6THE ALMIGHTY %player% JOINED!'
+quitmsg: '&6THE ALMIGHTY %player% LEFT!'
+onlyonjoin: true
+onlyonquit: false
+disablejoinmsg: false
+disablequitmsg: true
+makemsgprivate: false
